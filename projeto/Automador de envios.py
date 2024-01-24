@@ -2,10 +2,20 @@ import pandas as pd
 import plotly.express as px
 import pyautogui
 import pyperclip
-import Analisar
 
-Analisar()
 
+dados = pd.read_excel("vendas.xlsx")
+
+#criando graficos em html
+#LISTAS (ESTRUTURA DE DADOS)
+#estrutura de repeticao
+lista_colunas = ["loja", "cidade", "estado", "regiao", "tamanho", "local_consumo"]
+for coluna in lista_colunas:
+    grafico = px.histogram(dados, x=coluna, y="preco", text_auto=True, color="forma_pagamento")
+    grafico.show()
+    grafico.write_html(f"Grafico-{coluna}.html")
+
+'''
 #enviando esses graficos por email e wats
 email = input("Digite o email desejado: ")
 contato = input("Digite o nome desejado: ")
@@ -88,3 +98,4 @@ pyautogui.hotkey("enter")
 pyautogui.click(x=2469, y=978)
 
 print("Mensagem enviada com sucesso")
+'''
