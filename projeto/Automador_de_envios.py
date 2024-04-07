@@ -15,14 +15,15 @@ for coluna in lista_colunas:
     grafico.show()
     grafico.write_html(f"Grafico-{coluna}.html")
 
-'''
+
+"""
 #enviando esses graficos por email e wats
 email = input("Digite o email desejado: ")
 contato = input("Digite o nome desejado: ")
-mensagem = """
+mensagem = '''
 Olá;
 Segue abaixo os gráficos das análises de dados:
-"""
+'''
 
 #pause de segundos entre as tarefas
 pyautogui.PAUSE = 10
@@ -98,4 +99,4 @@ pyautogui.hotkey("enter")
 pyautogui.click(x=2469, y=978)
 
 print("Mensagem enviada com sucesso")
-'''
+"""
